@@ -20,5 +20,5 @@
     "noImplicitThis": false
   },
   "exclude": ["node_modules"],
-  "include": ["**/*.ts", "**/*.tsx", "./typings/images.d.ts","./typings/lib.d.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "./typings/images.d.ts","./typings/lib.d.ts", "lib/AudioManager.js"]
 }

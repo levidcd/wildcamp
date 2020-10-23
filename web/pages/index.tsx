@@ -5,9 +5,11 @@ import classnames from "classnames";
 import styles from "./index.module.scss";
 
 const IndexPage = () => (
-  <Layout title="Home">
+  // <Layout title="Home">
+  <div>
     <Cover></Cover>
-  </Layout>
+  </div>
+  // </Layout>
 );
 
 export default IndexPage;

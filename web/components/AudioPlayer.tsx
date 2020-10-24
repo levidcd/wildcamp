@@ -40,7 +40,7 @@ const AudioPlayer = () => {
       </span>
 
       <audio id="music" loop preload="auto">
-        <source src="/audio/CHACHACHA.mp3" type="audio/mpeg" />
+        <source src="/audio/Promise.mp3" type="audio/mpeg" />
         您的浏览器不支持 audio 元素。
       </audio>
     </div>

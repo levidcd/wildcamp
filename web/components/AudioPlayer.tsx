@@ -1,12 +1,12 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { PlayCircleOutlined, PauseCircleOutlined } from "@ant-design/icons";
 
 const AudioPlayer = () => {
 
-  function rbf() {
-    let audio: any = document.getElementById("music");
-    audio.currentTime = 0;
-  }
+  // function rbf() {
+  //   let audio: any = document.getElementById("music");
+  //   audio.currentTime = 0;
+  // }
 
   function bf() {
     var audio: any = document.getElementById("music");
@@ -20,7 +20,7 @@ const AudioPlayer = () => {
     }
   }
 
-  const playOrPause = (e: Event) => {
+  const playOrPause = (e: any) => {
     console.log(e.target);
     bf()
   };

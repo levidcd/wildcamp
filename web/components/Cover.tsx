@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React  from "react";
 import Header from "../components/Header";
 import classnames from "classnames";
 import styles from "./Cover.module.scss";

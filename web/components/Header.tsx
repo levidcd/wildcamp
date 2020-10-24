@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import classnames from "classnames";
 import styles from "./Header.module.scss";
 import { QuestionOutlined,MenuOutlined } from "@ant-design/icons";

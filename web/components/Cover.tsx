@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classnames from "classnames";
 import styles from "./Cover.module.scss";
 import Link from "next/link";
+import { routeMapData } from "../utils/routemap";
 import { useRouter } from "next/router";
 import {
   QuestionOutlined,
@@ -23,24 +24,24 @@ const Cover = () => {
       >
         <div className={classnames(styles.menuWrapper)}>
           <ul>
-            {router.route === "/" ? (
+            {router.route === routeMapData.index.route ? (
               ""
             ) : (
               <li>
-                <Link href="/">首页</Link>
+                <Link href={routeMapData.index.route}>首页</Link>
               </li>
             )}
             <li>
-              <Link href="/article">专栏</Link>
+              <Link href={routeMapData.topic.route}>专栏</Link>
             </li>
             <li>
-              <Link href="/toys">日志</Link>
+              <Link href={routeMapData.timeline.route}>日志</Link>
             </li>
             <li>
-              <Link href="/about">联系我</Link>
+              <Link href={routeMapData.concat.route}>联系我</Link>
             </li>
             <li>
-              <Link href="/about">关于</Link>
+              <Link href={routeMapData.about.route}>关于</Link>
             </li>
           </ul>
         </div>

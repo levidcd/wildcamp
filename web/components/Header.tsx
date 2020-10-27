@@ -2,6 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import Link from "next/link";
 import styles from "./Header.module.scss";
+import { routeMapData } from "../utils/routemap";
 import { QuestionOutlined, MenuOutlined } from "@ant-design/icons";
 
 const Header = () => (

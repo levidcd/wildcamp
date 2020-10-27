@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-routeMapData
+import { routeMapData } from "../utils/routemap";
 import classnames from "classnames";
 
 import styles from "./Nav.module.scss";

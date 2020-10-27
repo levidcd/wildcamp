@@ -1,7 +1,7 @@
 import "normalize.css";
-import './_app.scss';
 // import './antd-var.less'
 import "antd/dist/antd.less";
+import './_app.scss';
 
 import { AppProps } from "next/app";
 

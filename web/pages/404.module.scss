@@ -1,0 +1,59 @@
+// $bg: #fff;
+
+
+.contain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // background-color: $bg;
+}
+.wrap {
+  margin-top: 60px;
+}
+.text {
+  color: #434343;
+  //你可以使用自己想要的字体，我这里使用的是默认的非衬线体
+  // font-family: sans-serif;
+  font-size: 200px;
+  //要把这个关联文字层设置成相对定位，伪元素的绝对定位才会正确叠加到一起
+  position: relative;
+  margin: 0 auto;
+  &::before {
+    content: attr(data-text);
+    // background: $bg;
+    position: absolute;
+    //产生文字的投影小效果
+    text-shadow: 2px 0 red;
+    left: -2px;
+    clip-path: inset(0 0 0 0);
+    animation: ani2 2s infinite linear alternate-reverse;
+  }
+
+  &::after {
+    content: attr(data-text);
+    // background: $bg;
+    position: absolute;
+    text-shadow: -2px 0 blue;
+    left: 2px;
+    clip-path: inset(0 0 0 0);
+    animation: ani1 2s infinite linear alternate-reverse;
+  }
+}
+
+@keyframes ani1 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip-path: inset(random(150) + px 0 random(150) + px 0);
+    }
+  }
+}
+
+@keyframes ani2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip-path: inset(random(150) + px 0 random(150) + px 0);
+    }
+  }
+}

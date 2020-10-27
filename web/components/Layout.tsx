@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
 import AudioPlayer from "./AudioPlayer";
+import Nav from './Nav'
 
 type Props = {
   children?: ReactNode;
@@ -16,6 +17,7 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </Head>
     <div>
       <header>
+        <Nav></Nav>
         <div>
           <AudioPlayer></AudioPlayer>
         </div>

@@ -5,3 +5,69 @@
   z-index: 9999;
   overflow: hidden;
 }
+.header {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  color: #fff;
+  // z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-sizing: border-box;
+  z-index: 9999;
+  & > a {
+    width: 30px;
+    height: 30px;
+    line-height: 32px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #ff3600;
+    text-align: center;
+    background: hsla(0, 0%, 100%, .9);
+  }
+}
+
+.headerPanel {
+  transition: top 0.3s;
+  // animation: myfirst 1s;
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 998;
+  background-color: rgba(255, 255, 255, 0.95);
+  &:global(.active) {
+    top: 0;
+  }
+}
+
+@keyframes myfirst {
+  from {
+    top: -100vh;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+.menuWrapper {
+  margin-top: 40vh;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ul {
+    li {
+      display: inline-block;
+    }
+    a {
+      // display: inline-block;
+      font-size: 22px;
+      margin: 0 30px;
+    }
+  }
+}

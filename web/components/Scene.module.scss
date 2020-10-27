@@ -1,7 +1,7 @@
 .bannerWrapper {
   position: relative;
   width: 100%;
-  // height: 100vh;
+  height: 100vh;
 }
 .scene {
   height: 766px;
@@ -11,17 +11,30 @@
   pointer-events: none;
 }
 .layer {
-
+  // object-fit: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .image {
-  width: 100%;
+  height: 100vh;
 }
 .misk {
   position: absolute;
-  background-color: rgba(176, 14, 37, 0.7);
-  top:0;
-  left:0;
+  // background-color: rgba(176, 14, 37, 0.7);
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
+}
+@media screen and (max-width: 900px) {
+  :global(#vibrant) polygon {
+    transform: translateX(-10%);
+  }
+}
+@media screen and (max-width: 780px) {
+  :global(#vibrant) svg {
+    display: none;
+  }
 }

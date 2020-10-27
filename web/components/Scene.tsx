@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import styles from "./index.module.scss";
+import styles from "./Scene.module.scss";
 // import Parallax from "parallax-js";
 
 // function coverLayer() {
@@ -54,11 +54,24 @@ import styles from "./index.module.scss";
 const Scene = () => (
   <div className={classnames(styles.bannerWrapper)}>
     <div id="scene">
-      <div className={classnames("layer",styles.layer)}>
-        <img id="image" className={classnames(styles.image)} src="/images/banner.png" />
+      <div className={classnames(styles.layer)}>
+        <img
+          id="image"
+          className={classnames(styles.image)}
+          src="/images/banner.png"
+        />
       </div>
     </div>
-    <div className={classnames(styles.misk)}></div>
+    <div className={classnames(styles.misk)} id="vibrant">
+      <svg
+        viewBox="0 0 2880 1620"
+        height="100%"
+        preserveAspectRatio="xMaxYMax slice" fill="rgb(120, 24, 33)"
+      >
+        <polygon opacity="0.7"  points="2000,1620 0,1620 0,0 600,0 " />
+      </svg>
+      <div></div>
+    </div>
   </div>
 );
 

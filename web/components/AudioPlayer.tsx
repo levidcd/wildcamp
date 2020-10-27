@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { PlayCircleOutlined, PauseCircleOutlined } from "@ant-design/icons";
-import styles from './AudioPlayer.module.scss'
+import styles from "./AudioPlayer.module.scss";
 
 const AudioPlayer = () => {
-
   // function rbf() {
   //   let audio: any = document.getElementById("music");
   //   audio.currentTime = 0;
@@ -23,20 +22,24 @@ const AudioPlayer = () => {
 
   const playOrPause = (e: any) => {
     console.log(e.target);
-    bf()
+    bf();
+    setIsPlaying(!isPlaying);
   };
+
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div>
-      <div className={styles.audioPlayer}
+      <div
+        className={styles.audioPlayer}
         onClick={(e) => {
           playOrPause(e);
         }}
       >
-        {true ? (
-          <PlayCircleOutlined style={{ fontSize: "40px" }} />
+        {!isPlaying ? (
+          <PlayCircleOutlined style={{ fontSize: "30px",color:"rgba(176, 14, 37, 0.7)" }} />
         ) : (
-          <PauseCircleOutlined style={{ fontSize: "40px" }} />
+          <PauseCircleOutlined style={{ fontSize: "30px",color:'rgba(176, 14, 37, 0.7)' }} />
         )}
       </div>
 

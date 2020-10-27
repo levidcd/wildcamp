@@ -1,48 +1,16 @@
-/* CSS */
-// @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@4/distr/fira_code.css);
-
-// @font-face {
-//   font-family: "Fira Code";
-//   src: url("../public/font/woff/FiraCode-Regular.woff") format('woff');
-// }
-// @font-face {
-//   font-family: "YSBTH";
-//   src: url("../public/font/优设标题黑.ttf") format('ttf');
-// }
-// @font-face {
-//   font-family: "YSHST";
-//   src: url("../public/font/YSHaoShenTi.ttf") format('ttf');
-// }
-
+/**   reset.css --start   **/
 * {
   box-sizing: border-box;
 }
-body {
-  // -webkit-overflow-scrolling: touch;
-  background-color: #fafafa;
-  font-family: "Fira Code", "优设好身体", "优设标题黑", Hiragino Sans GB,
-    monospace, Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei,
-    "华文细黑", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-}
-/* Specify in CSS */
-code {
-  font-family: "Fira Code", "优设好身体", "优设标题黑", Hiragino Sans GB,
-    monospace, Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei,
-    "华文细黑";
-}
-
-@supports (font-variation-settings: normal) {
-  code {
-    font-family: "Fira Code", "优设好身体", "优设标题黑", Hiragino Sans GB,
-      monospace, Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑",
-      STXihei, "华文细黑";
-  }
-}
 ul {
   list-style: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
+
+/**   reset.css --end   **/
+
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
 ::-webkit-scrollbar {
   width: 6px;
@@ -62,4 +30,31 @@ ul {
   // border-radius: 10px;
   -webkit-box-shadow: inset 0 0 2px rgba(255, 255, 255, 0.7);
   background-color: #eee;
+}
+
+body {
+  // -webkit-overflow-scrolling: touch;
+  font-size: 14px;
+  text-align: center;
+  background-color: #fafafa;
+  font-family: "Fira Code", "优设好身体", "优设标题黑", Hiragino Sans GB,
+    monospace, Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei,
+    "华文细黑", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* Specify in CSS */
+code {
+  font-family: "Fira Code", "优设好身体", "优设标题黑", Hiragino Sans GB,
+    monospace, Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑", STXihei,
+    "华文细黑";
+}
+
+@supports (font-variation-settings: normal) {
+  code {
+    font-family: "Fira Code", "优设好身体", "优设标题黑", Hiragino Sans GB,
+      monospace, Tahoma, Helvetica, Arial, "Microsoft Yahei", "微软雅黑",
+      STXihei, "华文细黑";
+  }
 }

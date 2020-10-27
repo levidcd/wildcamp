@@ -5,5 +5,16 @@
   align-items: center;
   padding: 0 15px;
   box-shadow:0px 4px 5px #eee;
-  
+  .left{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    & > *{
+      // line-height: 60px;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      margin-right: 20px;
+    }
+  }
 }

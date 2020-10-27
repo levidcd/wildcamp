@@ -1,5 +1,6 @@
 import React from "react";
 import { PlayCircleOutlined, PauseCircleOutlined } from "@ant-design/icons";
+import styles from './AudioPlayer.module.scss'
 
 const AudioPlayer = () => {
 
@@ -27,7 +28,7 @@ const AudioPlayer = () => {
 
   return (
     <div>
-      <span
+      <div className={styles.audioPlayer}
         onClick={(e) => {
           playOrPause(e);
         }}
@@ -37,7 +38,7 @@ const AudioPlayer = () => {
         ) : (
           <PauseCircleOutlined style={{ fontSize: "40px" }} />
         )}
-      </span>
+      </div>
 
       <audio id="music" loop preload="auto">
         <source src="/audio/Promise.mp3" type="audio/mpeg" />

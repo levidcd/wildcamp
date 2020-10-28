@@ -5,7 +5,7 @@
 
 class AudioManager {
   #ele: string;
-  #audioPlayer: AudioContext | HTMLElement | null;
+  #audioPlayer: AudioContext | HTMLElement | any;
   isInit: Boolean;
   paused: Boolean;
 
@@ -18,14 +18,14 @@ class AudioManager {
   }
   play() {
     if (!this.#audioPlayer) {
-      this.init();
+      this.reInit();
     }
     this.#audioPlayer.play();
     this.paused = false;
   }
   pause() {
     if (!this.#audioPlayer) {
-      this.init();
+      this.reInit();
     }
     this.#audioPlayer.pause();
     this.paused = true;
@@ -36,20 +36,27 @@ class AudioManager {
   getStartDate() {
     return this.#audioPlayer.getStartDate();
   }
+  reInit() {
+    this.init();
+    return this;
+  }
   init() {
     if (typeof document !== "undefined") {
       const audioElement = document.getElementById(this.#ele);
+
+      if (!audioElement) return;
+
       this.#audioPlayer = audioElement;
       this.isInit = true;
       this.paused = true;
-      this.#audioPlayer.addEventListener("playing", function () {
-        console.log('播放中');
+      this.#audioPlayer.addEventListener("playing", () => {
+        console.log("播放中");
       });
-      this.#audioPlayer.addEventListener("timeupdate", function () {
-        console.log('播放中');
+      this.#audioPlayer.addEventListener("timeupdate", () => {
+        console.log(this.#audioPlayer.currentTime);
       });
-      this.#audioPlayer.addEventListener("pause", function () {
-        console.log('暂停');
+      this.#audioPlayer.addEventListener("pause", () => {
+        console.log("暂停");
       });
     }
   }

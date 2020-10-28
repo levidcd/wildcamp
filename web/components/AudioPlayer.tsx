@@ -6,27 +6,10 @@ import AudioManager from "../lib/AudioManager";
 
 const audioManager = new AudioManager("music");
 
-console.log(audioManager);
-
 const AudioPlayer = () => {
-  // function rbf() {
-  //   let audio: any = document.getElementById("music");
-  //   audio.currentTime = 0;
-  // }
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  // function bf() {
-  //   var audio: any = document.getElementById("music");
-  //   if (audio !== null) {
-  //     //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
-  //     if (audio.paused) {
-  //       audio.play(); //audio.play();// 这个就是播放
-  //     } else {
-  //       audio.pause(); // 这个就是暂停
-  //     }
-  //   }
-  // }
   function bf() {
-    // var audio: any = document.getElementById("music");
     if (audioManager.isInit) {
       if (audioManager.paused) {
         audioManager.play();
@@ -35,7 +18,8 @@ const AudioPlayer = () => {
       }
       setIsPlaying(!audioManager.paused);
     } else {
-      audioManager.init();
+      audioManager.reInit().play();
+      setIsPlaying(!audioManager.paused);
     }
   }
 
@@ -43,7 +27,11 @@ const AudioPlayer = () => {
     bf();
   };
 
-  const [isPlaying, setIsPlaying] = useState(false);
+  if (audioManager.isInit) {
+    if (audioManager.paused === isPlaying) {
+      setIsPlaying(!audioManager.paused);
+    }
+  }
 
   return (
     <div>

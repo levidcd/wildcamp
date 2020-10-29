@@ -2,31 +2,36 @@ import React, { useState } from "react";
 import { PlayCircleOutlined, PauseCircleOutlined } from "@ant-design/icons";
 import styles from "./AudioPlayer.module.scss";
 
+import AudioManager from "../lib/AudioManager";
+
+const audioManager = new AudioManager("music");
+
 const AudioPlayer = () => {
-  // function rbf() {
-  //   let audio: any = document.getElementById("music");
-  //   audio.currentTime = 0;
-  // }
+  const [isPlaying, setIsPlaying] = useState(false);
 
   function bf() {
-    var audio: any = document.getElementById("music");
-    if (audio !== null) {
-      //检测播放是否已暂停.audio.paused 在播放器播放时返回false.
-      if (audio.paused) {
-        audio.play(); //audio.play();// 这个就是播放
+    if (audioManager.isInit) {
+      if (audioManager.paused) {
+        audioManager.play();
       } else {
-        audio.pause(); // 这个就是暂停
+        audioManager.pause(); // 这个就是暂停
       }
+      setIsPlaying(!audioManager.paused);
+    } else {
+      audioManager.reInit().play();
+      setIsPlaying(!audioManager.paused);
     }
   }
 
   const playOrPause = (e: any) => {
-    console.log(e.target);
     bf();
-    setIsPlaying(!isPlaying);
   };
 
-  const [isPlaying, setIsPlaying] = useState(false);
+  if (audioManager.isInit) {
+    if (audioManager.paused === isPlaying) {
+      setIsPlaying(!audioManager.paused);
+    }
+  }
 
   return (
     <div>
@@ -37,9 +42,13 @@ const AudioPlayer = () => {
         }}
       >
         {!isPlaying ? (
-          <PlayCircleOutlined style={{ fontSize: "30px",color:"rgba(176, 14, 37, 0.7)" }} />
+          <PlayCircleOutlined
+            style={{ fontSize: "30px", color: "rgba(176, 14, 37, 0.7)" }}
+          />
         ) : (
-          <PauseCircleOutlined style={{ fontSize: "30px",color:'rgba(176, 14, 37, 0.7)' }} />
+          <PauseCircleOutlined
+            style={{ fontSize: "30px", color: "rgba(176, 14, 37, 0.7)" }}
+          />
         )}
       </div>
 

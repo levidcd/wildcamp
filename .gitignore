@@ -1,2 +1,7 @@
 .DS_Store
 out
+**/.env
+**/development.env
+**/.env.tmp
+**/production.env
+**/test.env

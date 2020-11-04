@@ -5,3 +5,4 @@ out
 **/.env.tmp
 **/production.env
 **/test.env
+**/yarn.lock

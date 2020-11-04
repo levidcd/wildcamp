@@ -9,8 +9,8 @@ export default registerAs('environment', (): EnvironmentConfig => {
     const host = getEnv('HOST', 'localhost');
     const port = getEnvNumber('PORT', 3000);
     const super_admin = getEnv('SUPER_ADMIN', 'super_admin');
-    const session_secret = getEnv('SESSION_SECRET', 'cnode');
-    const cookie_name = getEnv('AUTH_COOKIE_NAME', 'nest_cnode');
+    const session_secret = getEnv('SESSION_SECRET', 'wildcamp');
+    const cookie_name = getEnv('AUTH_COOKIE_NAME', 'nest_wildcamp');
     const environment = getEnv('NODE_ENV', 'development');
     const mini_assets = getEnvBoolean('MINI_ASSETS');
     return {

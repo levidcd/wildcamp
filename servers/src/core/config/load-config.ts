@@ -1,3 +1,4 @@
 import environmentConfig from './environment';
+import mongodbConfig from './mongodb';
 
-export default [environmentConfig];
+export default [environmentConfig, mongodbConfig];

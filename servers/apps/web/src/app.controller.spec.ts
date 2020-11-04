@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { SettingsModule } from './web/settings/settings.module';
+import { SettingsModule } from './settings/settings.module';
 import { CoreModule } from './core';
 
 

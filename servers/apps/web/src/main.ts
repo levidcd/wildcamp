@@ -8,6 +8,12 @@ import setupApp from './core/setup/index';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const prefix = 'web';
+  const versions = 'v1';
+  const globalPrefix = `${prefix}/${versions}`;
+  const swaggerPrefix = `api/${globalPrefix}`;
+
+  app.setGlobalPrefix(globalPrefix);
 
   const options = new DocumentBuilder()
     .setTitle('Cats example')
@@ -15,7 +21,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup(swaggerPrefix, app, document);
 
   const configService = app.get(ConfigService);
   // 初始化nest
@@ -24,11 +30,18 @@ async function bootstrap() {
   // 建立app配置
   setupApp(app);
   // 启动服务
+  console.log(
+    configService.get<number>('environment.port'),
+    configService.get<string>('environment.host'),
+  );
   await app.listen(
     configService.get<number>('environment.port'),
     configService.get<string>('environment.host'),
   );
-  console.log(`Application is running on: ${await app.getUrl()}`);
+
+  const url = await app.getUrl();
+  console.log(`\nApplication is running on: ${url}`);
+  console.log(`\nswagger page is running on: ${url}/${swaggerPrefix}`);
   // await app.listen(3000);
 }
 bootstrap().catch(console.error);

@@ -40,9 +40,9 @@ export default Joi.object({
     // REDIS_PASSWORD: string.empty('').default(''),
     // REDIS_DB: number.default(0),
     // mongodb配置验证
-    // MONGO_HOST: string.hostname().default('localhost'),
-    // MONGO_PORT: number.default(27017),
-    // MONGO_USER: string.empty('').default(''),
-    // MONGO_PASS: string.empty('').default(''),
-    // MONGO_DBS: string.empty('').default(''),
+    MONGO_HOST: string.hostname().default('localhost'),
+    MONGO_PORT: number.default(27017),
+    MONGO_USER: string.empty('').default(''),
+    MONGO_PASS: string.empty('').default(''),
+    MONGO_DBS: string.empty('').default(''),
 });

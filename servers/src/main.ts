@@ -21,7 +21,6 @@ async function bootstrap() {
   // 初始化nest
   app.init();
 
-  console.log(configService);
   // 建立app配置
   setupApp(app);
   // 启动服务

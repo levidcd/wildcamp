@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SettingsModule } from './web/settings/settings.module';
 
-import { CoreModule } from './core';
+import { CoreModule } from '@app/core';
 
 @Module({
   imports: [CoreModule,SettingsModule],

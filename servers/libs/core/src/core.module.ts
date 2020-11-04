@@ -1,8 +1,30 @@
 import { Module } from '@nestjs/common';
-import { CoreService } from './core.service';
+
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
+
+import validationSchema from './config/env-schema';
+import loadConfig from './config/load-config';
 
 @Module({
-  providers: [CoreService],
-  exports: [CoreService],
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      expandVariables: true,
+      envFilePath: `${process.env.NODE_ENV || 'development'}.env`,
+      load: loadConfig,
+      validationSchema,
+    }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: (configService: ConfigService) => ({
+        uri: configService.get<string>('mongodbConfig.url'),
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+      }),
+      inject: [ConfigService],
+    }),
+  ],
 })
 export class CoreModule {}

@@ -2,7 +2,8 @@
 out
 **/.env
 **/development.env
-**/.env.tmp
 **/production.env
 **/test.env
+**/yarn.lock
+**/package-lock.json
 **/yarn.lock

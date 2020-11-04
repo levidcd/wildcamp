@@ -28,7 +28,7 @@ async function bootstrap() {
     configService.get<number>('environment.port'),
     configService.get<string>('environment.host'),
   );
-
+  console.log(`Application is running on: ${await app.getUrl()}`);
   // await app.listen(3000);
 }
 bootstrap().catch(console.error);

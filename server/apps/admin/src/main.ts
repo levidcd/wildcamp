@@ -19,7 +19,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(swaggerPrefix, app, document);
 
-  await app.listen(3001, 'localhost');
+  await app.listen(3001, '0.0.0.0');
 
   const url = await app.getUrl();
   console.log(`\nApplication is running on: ${url}`);

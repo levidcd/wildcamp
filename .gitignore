@@ -1,9 +1,5 @@
 .DS_Store
 out
-**/.env
-**/development.env
-**/production.env
-**/test.env
 **/yarn.lock
 **/package-lock.json
 **/yarn.lock

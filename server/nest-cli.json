@@ -5,6 +5,7 @@
   "root": "apps/web",
   "compilerOptions": {
     "webpack": true,
+    "deleteOutDir": false,
     "tsConfigPath": "apps/web/tsconfig.app.json"
   },
   "projects": {

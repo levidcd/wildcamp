@@ -1,28 +1,31 @@
 FROM node:alpine
 
-RUN mkdir -p /server
+RUN mkdir -p /home/server
 
-COPY ./dist/apps/ /server
+COPY ./dist/apps/ /home/server
 
-COPY ./ecosystem.config.js /server
+COPY ./ecosystem.config.js /home/server
 
-COPY ./production.env /server/admin
+COPY ./package.json /home/server
 
-COPY ./production.env /server/web
+COPY ./production.env /home/server
 
 
 
-WORKDIR /server
 
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
-RUN cnpm install
+WORKDIR /home/server
+
+
+
+
+RUN npm install -g cnpm tyarn --registry=https://registry.npm.taobao.org
 RUN cnpm install pm2 -g
+RUN cnpm install 
 
-
+ENV HOST 0.0.0.0
 
 EXPOSE 3000
 EXPOSE 3001
 
-# ENTRYPOINT ["pm2-docker", "start"]
 
-# CMD ["ecosystem.config.js --env production"]
+CMD ["pm2-docker","start","ecosystem.config.js","--env", "production"]

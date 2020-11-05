@@ -1,10 +1,10 @@
 FROM node:alpine
 
-RUN mkdir -p /web
+RUN mkdir -p /home/web
 
-COPY . /web
+COPY . /home/web
 
-WORKDIR /web
+WORKDIR /home/web
 
 RUN npm config set registry https://registry.npm.taobao.org/
 
@@ -13,8 +13,6 @@ RUN yarn config set registry https://registry.npm.taobao.org
 
 
 RUN yarn
-
-# RUN yarn add next 
 
 RUN npm rebuild node-sass
 
@@ -25,4 +23,4 @@ ENV PORT 8000
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

@@ -30,10 +30,6 @@ async function bootstrap() {
   // 建立app配置
   setupApp(app);
   // 启动服务
-  console.log(
-    configService.get<number>('environment.port'),
-    configService.get<string>('environment.host'),
-  );
   await app.listen(
     configService.get<number>('environment.port'),
     configService.get<string>('environment.host'),

@@ -11,6 +11,7 @@ import {
 } from "@ant-design/icons";
 
 import Scene from './Scene'
+import SceneVideo from './SceneVideo'
 
 const Cover = () => {
   const [showPanel, setShowPanel] = useState(false);
@@ -18,7 +19,7 @@ const Cover = () => {
 
   return (
     <div className={classnames(styles.cover)}>
-      <Scene></Scene>
+      <SceneVideo></SceneVideo>
       <div
         className={classnames(styles.headerPanel, showPanel ? "active" : "")}
       >

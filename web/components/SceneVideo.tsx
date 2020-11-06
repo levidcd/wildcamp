@@ -14,7 +14,7 @@ const Scene = () => (
           src="/images/banner.png"
         /> */}
         <video id="video" muted
-          className={classnames(styles.video)} preload="auto"  autoplay="autoplay" loop="loop" src="/video/LIP.mp4"></video>
+          className={classnames(styles.video)} preload="auto" autoPlay loop src="/video/LIP.webm"></video>
       </div>
     </div>
     {/* <div className={classnames(styles.misk)} id="vibrant">

@@ -5,6 +5,8 @@ export interface EnvironmentConfig {
   host: string;
   // 端口号
   port: number;
+  // api 前缀
+  static_api_prefix: string;
   // 是否压缩静态资源
   mini_assets: boolean;
   // 静态资源主机地址

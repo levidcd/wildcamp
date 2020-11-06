@@ -11,6 +11,7 @@ export default registerAs('environment', (): EnvironmentConfig => {
     const super_admin = getEnv('SUPER_ADMIN', 'super_admin');
     const session_secret = getEnv('SESSION_SECRET', 'wildcamp');
     const cookie_name = getEnv('AUTH_COOKIE_NAME', 'nest_wildcamp');
+    const static_api_prefix = getEnv('STATIC_API_PREFIX','')
     const environment = getEnv('NODE_ENV', 'development');
     const mini_assets = getEnvBoolean('MINI_ASSETS');
     return {
@@ -19,6 +20,7 @@ export default registerAs('environment', (): EnvironmentConfig => {
         super_admin,
         session_secret,
         mini_assets,
+        static_api_prefix,
         cookie_name,
         environment,
         isDevelopment: environment === 'development',

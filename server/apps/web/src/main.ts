@@ -8,10 +8,12 @@ import setupApp from '@app/core/setup/index';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const prefix = 'web';
+  const configService = app.get(ConfigService);
+  const apiPrefix = configService.get<string>('environment.static_api_prefix');
+  const prefix = "web"
   const versions = 'v1';
-  const globalPrefix = `${prefix}/${versions}`;
-  const swaggerPrefix = `api/${globalPrefix}`;
+  const globalPrefix = `${apiPrefix}/${prefix}/${versions}`;
+  const swaggerPrefix = `${globalPrefix}`;
 
   app.setGlobalPrefix(globalPrefix);
 
@@ -23,7 +25,6 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup(swaggerPrefix, app, document);
 
-  const configService = app.get(ConfigService);
   // 初始化nest
   app.init();
 

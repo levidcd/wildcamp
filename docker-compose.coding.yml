@@ -21,7 +21,7 @@ services:
       - ~/data/db:/data/db
   server:
     # build: ./server
-    image: wildcamp-docker.pkg.coding.net/wildcamp/wildcamp/web
+    image: wildcamp-docker.pkg.coding.net/wildcamp/wildcamp/server
     container_name: server
     restart: always
     ports:

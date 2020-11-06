@@ -10,6 +10,7 @@ npm run build admin
 
 # 打包web
 cd ${CRTDIR}/web
+cnpm i
 npm run build 
 
 

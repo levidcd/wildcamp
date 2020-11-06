@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
-import { Setting, SettingDocument } from './schemas/Setting.schema';
-import { CreateSettingDto } from './dto/create-Setting.dto';
+import { Setting, SettingDocument } from './schemas/setting.schema';
+import { CreateSettingDto } from './dto/create-setting.dto';
 
 
 @Injectable()

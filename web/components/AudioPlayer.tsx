@@ -53,7 +53,11 @@ const AudioPlayer = () => {
       </div>
 
       <audio id="music" loop preload="auto">
-        <source src="/audio/Promise.mp3" type="audio/mpeg" />
+        <source
+          src="
+https://wildcamp-file.oss-cn-hangzhou.aliyuncs.com/audios/Promise.mp3"
+          type="audio/mpeg"
+        />
         您的浏览器不支持 audio 元素。
       </audio>
     </div>

@@ -58,7 +58,7 @@ const Scene = () => (
         <img
           id="image"
           className={classnames(styles.image)}
-          src="/images/banner.png"
+          src="https://wildcamp-file.oss-cn-hangzhou.aliyuncs.com/images/banner.png"
         />
       </div>
     </div>

@@ -1,6 +1,12 @@
 #!/bin/sh
 CRTDIR=$(pwd)
 
+# 打包admincms
+cd ${CRTDIR}/admincms
+rm -rf build
+cnpm i
+cnpm run build
+
 # 打包server
 cd ${CRTDIR}/server
 rm -rf dist

@@ -44,3 +44,13 @@ services:
     # external_links:
     #   - "server:server"
     #   - "mongodb:mongodb"
+  admincms:
+    # build: ./admincms
+    image: wildcamp-docker.pkg.coding.net/wildcamp/wildcamp/admincms
+    container_name: admincms
+    restart: always
+    ports:
+      - 8001:8001
+    # external_links:
+    #   - "server:server"
+    #   - "mongodb:mongodb"

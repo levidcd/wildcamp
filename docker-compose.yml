@@ -12,6 +12,14 @@ services:
     links:
       - server
       - web
+  admincms:
+    build: ./admincms
+    container_name: admincms
+    restart: always
+    ports:
+      - 8001:8001
+    external_links:
+      - "server:server"
   mongodb:
     image: mongo:latest
     container_name: mongodb

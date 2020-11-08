@@ -13,7 +13,7 @@ RUN ls -a
 COPY ./nginx.conf /etc/nginx/nginx.conf
 
 ENV HOST 0.0.0.0
-ENV PORT 8001
+ENV PORT 80
 
 EXPOSE 8001
 
